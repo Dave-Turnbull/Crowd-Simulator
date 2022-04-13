@@ -68,9 +68,6 @@ var getWalking = function () {
               duration: speedMove,
               easing: "linear",
               queue: false,
-              complete: function () {
-                $(this).remove();
-              },
             }
           );
       } else {
@@ -87,9 +84,7 @@ var getWalking = function () {
               duration: speedMove,
               easing: "linear",
               queue: false,
-              complete: function () {
-                $(this).remove();
-              },
+              complete: personCounter++,
             }
           );
       }
