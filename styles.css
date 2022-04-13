@@ -1,7 +1,8 @@
 #wrapper {
     overflow:hidden;
-    position:relative;
-    width:100%; height:700px;
+    position:absolute;
+    width:100%; height:600px;
+    bottom: 0px;
 }
 #bouncingdiv {
     position:absolute; top:100px; left:50px;
