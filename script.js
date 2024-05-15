@@ -38,6 +38,7 @@ var skewDistribution = 1350;
 //Find every image inside the folder called 'people' and for each one, push the value to the peopleList array
 $(document).ready(function () {
   $.ajax({
+    crossDomain: true,
     //the folder (starting at root)
     url: "people",
     success: function (data) {
@@ -90,14 +91,14 @@ var getWalking = function () {
       distanceAway = 10;
     }
     //set the speed a person moves across the screen
-    speedTotal = Math.round(Math.random() * 6 + 3);
+    speedTotal = Math.round(Math.random() * (6000/$(window).width()) + 3);
     //set the number of steps a person does through the whole screen
-    stepsNumber = Math.floor(Math.random() * 12 + 7);
+    stepsNumber = Math.floor(Math.random() * ($(window).width()/100)) + 3;
     //set the direction to random
     directionMove = Math.random() > 0.5;
 
     //Animate the div dependant on the window width
-    speedMove = $(window).width() * speedTotal;
+    speedMove = ($(window).width()) * speedTotal;
 
     //set the rate of bouncing based on the speed
     speedBounce = speedMove / stepsNumber;
@@ -176,14 +177,14 @@ var getWalking = function () {
   }
 };
 
-let root = document.getElementById("root");
+let onOffBtn = document.getElementById("onOffBtn");
 $(document).ready(function () {
-  $("#root").click(function () {
-    if (root.value === "on") {
-      root.value = "off";
+  $("#onOffBtn").click(function () {
+    if (onOffBtn.value === "on") {
+      onOffBtn.value = "off";
       triggerWalk = false;
     } else {
-      root.value = "on";
+      onOffBtn.value = "on";
       triggerWalk = true;
       theLoop();
     }
