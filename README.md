@@ -12,6 +12,8 @@ Automatically pulls images from the /people folder
 
 animates using jQuery's .animate method
 
+heavily commented code for your reading pleasure
+
 ## How to use
 
 Pull this project from GitHub with
