@@ -25,7 +25,7 @@ var distanceDistribution = [
   8, 8, 8, 6, 6, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1, 0,
 ];
 
-/*for the below variable, open a graph calculator and put this in:
+/*for the below skewDistribution variable, open a graph calculator and put this in:
 
 "x + l - x(f/n+1)" 
 replace: l = half the distribution array length f=the personCounter, n=skewDistribution
@@ -42,6 +42,7 @@ $(document).ready(function () {
     url: "people",
     success: function (data) {
       $(data)
+      //allow cross origin so images can be loaded
         .find("a:contains(.png)")
         .each(function () {
           // will loop through
@@ -58,7 +59,6 @@ var getWalking = function () {
   //set max amount of people to 200
   if (personCounter < 200) {
     personCounter++;
-    console.log(Math.round(personCounter + 20 - personCounter * 1.1));
     //create the block variables
     let speedTotal;
     let speedMove;
@@ -103,6 +103,7 @@ var getWalking = function () {
     speedBounce = speedMove / stepsNumber;
 
     //create the div with ID of "bouncingdiv", append it to "wrapper", then for each version of it add the CSS and animation
+    console.log(imageURL)
     $("<img />", {
       id: "bouncingdiv",
       src: imageURL,
