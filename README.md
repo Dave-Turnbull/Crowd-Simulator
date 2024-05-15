@@ -8,11 +8,11 @@ Inspired by [Szenia Zadvornykh on Code Pen ](https://codepen.io/zadvorsky/pen/xx
 
 Works across multiple screen sizes,
 
-Automatically pulls images from the /people folder
+Automatically pulls images from the /people folder,
 
-animates using jQuery's .animate method
+Animates using jQuery's .animate method,
 
-heavily commented code for your reading pleasure
+Heavily commented code for your reading pleasure.
 
 ## How to use
 
